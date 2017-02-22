@@ -1,0 +1,17 @@
+#overall-page {
+	padding-top: 50px;
+}
+
+#logo {
+	width: 450px;
+}
+
+.section-header {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 90px;
+	font-weight: 100;
+}
+
+#logo, .section-header {
+	padding-left: 25px;
+}
