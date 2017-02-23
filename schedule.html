@@ -10,12 +10,12 @@
 </head>
 
 <body>
-	<div id="overall-page" ng-controller="AppController as page">
+	<div id="overall-page" ng-controller="ScheduleController as page">
 		<img src="assets/TEDx_logo_White.png" id="logo"/>
 			<h1 class="section-header">Schedule</h1>
-			<div ng-repeat="section in speakers">
-			<h1>Sample</h1>
-			</div>
+				<div class="speaker-div-schedule" ng-repeat="section in speakers">
+					<h1 class="speaker-title">{{section.text}}</h1>
+				</div>
 		</div>
 	</div>
 </body>
