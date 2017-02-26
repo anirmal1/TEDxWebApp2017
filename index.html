@@ -1,11 +1,13 @@
+<!-- Homepage of the TEDxUofW2017 Web App -->
+
 <!DOCTYPE html>
 <html ng-app="tedx-app">
 <head>
 	<title>TEDxUofW</title>
 	<meta charset='UTF-8'>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
-	<script src="components.js"></script>
 	<script src="app.js"></script>
+
 	<link href="app.css" type="text/css" rel="stylesheet" />
 </head>
 
@@ -14,7 +16,9 @@
 		<img src="assets/TEDx_logo_White.png" id="logo"/>
 		<div ng-repeat="section in sections">
 			<h1 class="section-header">{{section.text}}</h1>
-			<homesection type={{section.content}}></homesection>
+			<div class="homesection" id="{{section.content}}">
+			</div>
+			<!-- <homesection type={{section.content}}></homesection> -->
 		</div>
 	</div>
 </body>

@@ -14,6 +14,7 @@
 
 #logo, .section-header {
 	padding-left: 25px;
+	margin-bottom: 15px;
 }
 
 .speaker-div-schedule {
@@ -29,4 +30,21 @@
 	font-size: 100px;
 	font-weight: 100;
 	color: white;
+}
+
+.homesection {
+	background-color: #E62B1E;
+	height: 270px;
+}
+
+#schedule-scroll {
+
+}
+
+#speakers-scroll {
+
+}
+
+#activities-scroll {
+
 }
