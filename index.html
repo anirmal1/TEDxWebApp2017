@@ -15,7 +15,12 @@
 	<div id="overall-page" ng-controller="AppController as page">
 		<img src="assets/TEDx_logo_White.png" id="logo"/>
 		<div ng-repeat="section in sections">
-			<h1 class="section-header">{{section.text}}</h1>
+			<div class="container-heading">
+				<h1 class="section-header">{{section.text}}</h1>
+				<svg class="home-arrow" viewBox="0 0 24 24">
+	    			<path fill="#000000" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+				</svg>
+			</div>
 			<div class="container-scroll">
 				<div class="homesection" id="{{section.content}}">
 				</div>

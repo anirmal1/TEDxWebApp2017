@@ -14,6 +14,7 @@ body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 90px;
 	font-weight: 100;
+	display: inline-block;
 }
 
 #logo, .section-header {
@@ -31,7 +32,7 @@ body {
 
 .speaker-title {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 100px;
+	font-size: 90px;
 	font-weight: 100;
 	color: white;
 }
@@ -41,13 +42,23 @@ body {
 	height: 270px;
 	width: 2000px; /*this is really arbitrary, get rid of later yes*/
 	margin-left: 25px;
-	margin-right: -25px;
 	overflow-y: hidden !important;
 }
 
 .container-scroll {
 	position: relative !important;
-	overflow: auto
+	overflow: auto;
+}
+
+.home-arrow {
+	display: inline-block;
+	position: relative;
+	width: 70px;
+	height: 70px;
+}
+
+.container-heading {
+	vertical-align: center;
 }
 
 #schedule-scroll {
