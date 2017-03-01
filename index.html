@@ -16,9 +16,10 @@
 		<img src="assets/TEDx_logo_White.png" id="logo"/>
 		<div ng-repeat="section in sections">
 			<h1 class="section-header">{{section.text}}</h1>
-			<div class="homesection" id="{{section.content}}">
-			</div>
-			<!-- <homesection type={{section.content}}></homesection> -->
+			<div class="container-scroll">
+				<div class="homesection" id="{{section.content}}">
+				</div>
+			<div>
 		</div>
 	</div>
 </body>

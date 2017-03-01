@@ -1,3 +1,7 @@
+body {
+	width: 100%;
+}
+
 #overall-page {
 	padding-top: 50px;
 }
@@ -35,7 +39,15 @@
 .homesection {
 	background-color: #E62B1E;
 	height: 270px;
+	width: 2000px; /*this is really arbitrary, get rid of later yes*/
 	margin-left: 25px;
+	margin-right: -25px;
+	overflow-y: hidden !important;
+}
+
+.container-scroll {
+	position: relative !important;
+	overflow: auto
 }
 
 #schedule-scroll {
