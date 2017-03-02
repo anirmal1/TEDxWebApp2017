@@ -1,7 +1,7 @@
 <!-- Homepage of the TEDxUofW2017 Web App -->
 
 <!DOCTYPE html>
-<html ng-app="tedx-app">
+<html>
 <head>
 	<title>TEDxUofW</title>
 	<meta charset='UTF-8'>
@@ -12,14 +12,16 @@
 </head>
 
 <body>
-	<div id="overall-page" ng-controller="AppController as page">
+	<div id="overall-page">
 		<img src="assets/TEDx_logo_White.png" id="logo"/>
 
-		<!-- One block in the home page -->
-		<div ng-repeat="section in sections">
+		<!--Submit form at the top, "what do you care about, whats a cool idea", could be submitted to a common collage of answers-->
+
+		<!-- Schedule block in the home page -->
+		<div class="homeblock">
 			<!-- Heading -->
 			<div class="container-heading">
-				<h1 class="section-header">{{section.text}}</h1>
+				<h1 class="section-header">Schedule</h1>
 				<svg class="home-arrow" viewBox="0 -5 24 24">
 	    			<path fill="#000000" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
 				</svg>
@@ -27,13 +29,56 @@
 
 			<!-- Scrolling container -->
 			<div class="container-scroll">
-				<div class="homesection" id="{{section.content}}">
-					<div> <!-- Need to figure out how to get this to be unique for each section  -->
-						<div ng-repeat="item in section.items"></div>
+				<div class="homesection" id="speakers-scroll">
+					<div>
+						<!--TODO: insert blocks for each schedule item (white text on ted red OR ted red text on white)-->
 					</div>
 				</div>
-			<div>
+			</div>
 		</div>
+
+		<!--Speaker block in the home page-->
+		<div class="homeblock">
+			<!-- Heading -->
+			<div class="container-heading">
+				<h1 class="section-header">Speakers</h1>
+				<svg class="home-arrow" viewBox="0 -5 24 24">
+	    			<path fill="#000000" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+				</svg>
+			</div>
+
+			<!-- Scrolling container -->
+			<div class="container-scroll">
+				<div class="homesection" id="speakers-scroll">
+					<div>
+						<!-- TODO: insert blocks with pictures for each speaker, white border for each picture possibly -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!--Activities block in the home page-->
+		<div class="homeblock">
+			<!-- Heading -->
+			<div class="container-heading">
+				<h1 class="section-header">Activities</h1>
+				<svg class="home-arrow" viewBox="0 -5 24 24">
+	    			<path fill="#000000" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+				</svg>
+			</div>
+
+			<!-- Scrolling container -->
+			<div class="container-scroll">
+				<div class="homesection" id="activities-scroll">
+					<div>
+						<!-- TODO: will have to figure this one out -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+
 
 	</div>
 </body>
