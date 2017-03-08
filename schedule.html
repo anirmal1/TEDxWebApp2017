@@ -5,19 +5,19 @@
 <head>
 	<title>TEDxUofW</title>
 	<meta charset='UTF-8'>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
 	<script src="components.js"></script>
-	<script src="app.js"></script>
+	<script src="app_schedule.js"></script>
 	<link href="app.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
-	<div id="overall-page" ng-controller="ScheduleController as page">
+	<div id="overall-page">
 		<img src="assets/TEDx_logo_White.png" id="logo"/>
-			<h1 class="section-header">Schedule</h1>
-				<div class="speaker-div-schedule" ng-repeat="section in speakers">
-					<h1 class="speaker-title">{{section.text}}</h1>
-				</div>
+			<div>
+				<h1 class="section-header">Schedule</h1>
+			</div>
+			<div id="speaker-page-list">
+			</div>
 		</div>
 	</div>
 </body>

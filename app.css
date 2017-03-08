@@ -24,10 +24,12 @@ body {
 
 .speaker-div-schedule {
 	background-color: #E62B1E;
+	height: 270px;
 	padding-left: 25px;
 	padding-right: 25px;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	margin-bottom: 25px;
 }
 
 .speaker-title {
