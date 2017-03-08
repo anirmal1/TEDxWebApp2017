@@ -30,6 +30,7 @@ body {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	margin-bottom: 25px;
+	vertical-align: middle; /*may need to get rid of this once times are added*/
 }
 
 .speaker-title {
