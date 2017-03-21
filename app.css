@@ -2,6 +2,17 @@ body {
 	width: 100%;
 }
 
+.trapezoid {
+    height: 0;
+    width: 30%;
+		color: white;
+    border-bottom: 55em solid;
+    border-left: 25em solid transparent;
+    border-right: 0em solid transparent;
+    float: left;
+		overflow: hidden;
+}
+
 #overall-page {
 	padding-top: 50px;
 }
@@ -38,12 +49,13 @@ body {
 	font-size: 90px;
 	font-weight: 100;
 	color: white;
+	float: left;
 }
 
 .homesection {
 	background-color: #E62B1E;
 	height: 270px;
-	width: 2000px; /*this is really arbitrary, get rid of later yes*/
+	/*width: 2000px; /*this is really arbitrary, get rid of later yes*/
 	margin-left: 25px;
 	overflow-y: hidden !important;
 }
@@ -62,6 +74,21 @@ body {
 
 .container-heading {
 	vertical-align: center;
+}
+
+.event-box {
+	height: 270px;
+	border: 2px solid white;
+	display: inline-block;
+}
+
+.event-box-text {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 45px;
+	font-weight: 100;
+	float: left;
+	color: white;
+	margin: 15px;
 }
 
 #schedule-scroll {
