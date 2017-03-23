@@ -91,6 +91,16 @@ body {
 	margin: 15px;
 }
 
+.interactive-heading {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: black;
+	font-weight: 400;
+	font-size: 120px;
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
 #schedule-scroll {
 
 }

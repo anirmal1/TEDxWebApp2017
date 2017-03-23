@@ -1,6 +1,14 @@
 // JavaScript file for HomePage
 
 (window.onload = function() {
+	// Interactive section on the home page
+	var interactive = document.getElementById('interactive');
+	// TEMPORARY:: just have "yes and ___", but change it at different times to display other things
+	var interactiveHeading = document.createElement('h1');
+	interactiveHeading.classList.add('interactive-heading');
+	interactiveHeading.innerHTML = 'yes and ____';
+	interactive.appendChild(interactiveHeading);
+
 	// Schedule information for home page
 	var scheduleScrollSection = document.getElementById('schedule-blocks');
 	var events = ['Speaker1', 'Speaker2', 'Speaker3', 'Entertainment1', 'Speaker4', 'Speaker5', 'Speaker6', 'Entertainment2'];
