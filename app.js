@@ -4,9 +4,15 @@
 	// Interactive section on the home page
 	var interactive = document.getElementById('interactive');
 	// TEMPORARY:: just have "yes and ___", but change it at different times to display other things
-	var interactiveHeading = document.createElement('h1');
+	var interactiveHeading = document.createElement('form');
 	interactiveHeading.classList.add('interactive-heading');
-	interactiveHeading.innerHTML = 'yes and ____';
+	interactiveHeading.innerHTML = 'yes and ';
+	var inputPart = document.createElement('input');
+	inputPart.setAttribute('type', 'text');
+	inputPart.setAttribute('name', 'yesAnd');
+	inputPart.setAttribute('size', '5');
+	inputPart.classList.add('homepage-input');
+	interactiveHeading.appendChild(inputPart);
 	interactive.appendChild(interactiveHeading);
 
 	// Schedule information for home page

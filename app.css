@@ -85,7 +85,7 @@ body {
 .event-box-text {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 45px;
-	font-weight: 100;
+	font-weight: 200;
 	float: left;
 	color: white;
 	margin: 15px;
@@ -99,6 +99,15 @@ body {
 	text-align: center;
 	margin-top: 0px;
 	margin-bottom: 0px;
+}
+
+.homepage-input {
+	font-size: 120px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 4px solid black;
+
 }
 
 #schedule-scroll {
