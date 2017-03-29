@@ -22,9 +22,9 @@
 	var speakers = ['Speaker1', 'Speaker2', 'Speaker3', 'Speaker4', 'Speaker5', 'Speaker6', 'Speaker7', 'Speaker8'];
 	speakerScroll.style.width = (300 * events.length) + "px"
 	var dirname = "assets/Images2016";
-	var images = glob($dirname."*.jpg");
-	foreach($images as $image) {
-	    echo '<img src="'.$image.'" /><br />';
+	var images = glob(dirname."*.jpg");
+	foreach(images as image) {
+	    echo '<img src="'.image.'" /><br />';
 	}
 	speakers.forEach(function(loadImage) {
 
