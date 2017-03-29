@@ -26,6 +26,8 @@ body {
 	font-size: 90px;
 	font-weight: 100;
 	display: inline-block;
+	text-decoration: none;
+	color: black;
 }
 
 #logo, .section-header {
