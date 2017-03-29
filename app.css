@@ -21,7 +21,7 @@ body {
 	width: 450px;
 }
 
-.section-header {
+.section-header, a {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 90px;
 	font-weight: 100;
