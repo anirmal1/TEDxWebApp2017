@@ -14,7 +14,7 @@ body {
 }
 
 #overall-page {
-	padding-top: 50px;
+	/*padding-top: 50px;*/
 }
 
 #logo {
@@ -110,6 +110,14 @@ body {
 	border-right: none;
 	border-bottom: 4px solid black;
 
+}
+
+#top-banner {
+	background-color: #f1f1f1;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	width: 100%;
+	margin-bottom: 10px;
 }
 
 #schedule-scroll {

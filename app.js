@@ -49,9 +49,9 @@ function sendYesAndData() {
 
 function addHomePageScheduleInfo() {
 	var scheduleScrollSection = document.getElementById('schedule-blocks');
-	var events = ['Speaker1', 'Speaker2', 'Speaker3', 'Entertainment1', 'Speaker4', 'Speaker5', 'Speaker6', 'Entertainment2'];
+	var events = ['Speaker1', 'Speaker2', 'Speaker3', 'Enter1', 'Speaker4', 'Speaker5', 'Speaker6', 'Enter2'];
 	boxWidth = 300;
-	scheduleScrollSection.style.width = (boxWidth * events.length) + "px"
+	scheduleScrollSection.style.width = ((boxWidth + 4) * events.length) + "px" // hard coded sorry bleh
 	events.forEach(function(eventItem) {
 		var eventBox = document.createElement('div');
 		eventBox.style.width = boxWidth + "px";
