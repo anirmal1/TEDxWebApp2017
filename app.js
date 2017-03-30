@@ -24,6 +24,7 @@ window.onload = function() {
 	addHomePageScheduleInfo();
 
 	// Speaker information for home page
+	addSpeakerImages();
 	/*var speakerScroll = document.getElementById('container-scroll');
 	var speakers = ['Speaker1', 'Speaker2', 'Speaker3', 'Speaker4', 'Speaker5', 'Speaker6', 'Speaker7', 'Speaker8'];
 	speakerScroll.style.width = (300 * events.length) + "px"
@@ -62,6 +63,35 @@ function addHomePageScheduleInfo() {
 		eventBox.appendChild(speakerText);
 		scheduleScrollSection.appendChild(eventBox); // can't figure out why entertainment 2 isnt showing :(
 	});
+}
+
+function addSpeakerImages() {
+	var xhr = new XMLHttpRequest();
+	xhr.onload = processSpeakerData;
+	xhr.open('GET', 'data/speakers.json', true);
+	xhr.send();
+}
+
+function processSpeakerData() {
+	var data = JSON.parse(this.responseText);
+	var speakerScrollSection = document.getElementById('speaker-blocks');
+	var speakerNames = data.speakerNames;
+	var totalWidth = 0;
+	for (var name in speakerNames) {
+		var speakerBox = document.createElement('div');
+		speakerBox.classList.add('speakers-scroll-section');
+		var imageBlock = document.createElement('img');
+		var path = speakerNames[name].image;
+		imageBlock.setAttribute('src', 'assets/Images2016/' + path);
+		
+		// TODO figure out why width is NaN (think it might have to do with style of auto width in CSS)
+		totalWidth += parseInt(imageBlock.style.width);
+		console.log(imageBlock.style.width);
+		speakerBox.appendChild(imageBlock);
+		speakerScrollSection.appendChild(speakerBox);
+	}
+	console.log(totalWidth);
+	speakerScrollSection.style.width = totalWidth + 'px';
 }
 
 })();

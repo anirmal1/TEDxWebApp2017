@@ -120,6 +120,20 @@ body {
 	margin-bottom: 10px;
 }
 
+.speakers-scroll-section {
+	display: inline-block;
+	height: 270px;
+}
+
+.speakers-scroll-section img {
+	height: 100%;
+	width: auto;
+}
+
+#speaker-blocks {
+	
+}
+
 #schedule-scroll {
 
 }
