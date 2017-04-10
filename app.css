@@ -14,11 +14,17 @@ body {
 }
 
 #overall-page {
-	padding-top: 50px;
+	/*padding-top: 50px;*/
 }
 
 #logo {
 	width: 450px;
+	padding-left: 25px;
+}
+
+#logo-items {
+	float: right;
+	margin-right:40px;
 }
 
 #speaker-images {
@@ -35,7 +41,7 @@ body {
 	color: black;
 }
 
-#logo, .section-header {
+.section-header {
 	padding-left: 25px;
 	margin-bottom: 15px;
 }
@@ -115,6 +121,29 @@ body {
 	border-right: none;
 	border-bottom: 4px solid black;
 
+}
+
+#top-banner {
+	background-color: #f1f1f1;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.speakers-scroll-section {
+	display: inline-block;
+	height: 270px;
+	border: 2px solid white;
+}
+
+.speakers-scroll-section img {
+	height: 100%;
+	width: auto;
+}
+
+#speaker-blocks {
+	background-color: white;
 }
 
 #schedule-scroll {

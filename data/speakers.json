@@ -1,0 +1,28 @@
+{
+	"speakerNames" : {
+		"AngelaBullock" : {
+			"image" : "angela-bullock.jpg"
+		},
+		"DerekSutherland" : {
+			"image" : "derek-sutherland.jpg"
+		},
+		"ElizabethNance" : {
+			"image" : "elizabeth-nance.jpg"
+		},
+		"JamesLong" : {
+			"image" : "james-long.jpg"
+		},
+		"JohnEklof" : {
+			"image" : "john-eklof.jpg"
+		}, 
+		"LaraZarowsky" : {
+			"image" : "lara-zarowsky.jpg"
+		},
+		"LynetteJohnson" : {
+			"image" : "lynette-johnson.jpg"
+		},
+		"PedroDomingos" : {
+			"image" : "pedro-domingos.jpg"
+		}
+	}
+}
