@@ -118,7 +118,7 @@ function processSpeakerData() {
 		speakerScrollSection.appendChild(speakerBox);
 	}
 	console.log(totalWidth);
-	speakerScrollSection.style.width = totalWidth + 'px';
+	speakerScrollSection.style.width = '1625px';// HARDCODED BLEH //totalWidth + 'px';
 }
 
 })();
