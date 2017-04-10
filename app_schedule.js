@@ -13,10 +13,10 @@
 			var speakerName = document.createElement("h1");
 			speakerName.classList.add("speaker-title");
 			speakerName.innerHTML = speakers[i];
-			// var trapezoid = document.createElement("div");
-			// trapezoid.classList.add("trapezoid");
+			var trapezoid = document.createElement("div");
+			trapezoid.classList.add("speaker-trapezoid");
 			divSpeaker.appendChild(speakerName);
-			// divSpeaker.appendChild(trapezoid);
+			divSpeaker.appendChild(trapezoid);
 			speakerList.appendChild(divSpeaker);
 		}
 	

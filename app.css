@@ -56,9 +56,9 @@ body {
 	background-color: #E62B1E;
 	height: 270px;
 	padding-left: 25px;
-	padding-right: 25px;
+	/*padding-right: 25px;
 	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-bottom: 10px;*/
 	margin-bottom: 25px;
 	vertical-align: middle; /*may need to get rid of this once times are added*/
 }
@@ -150,6 +150,19 @@ body {
 
 #speaker-blocks {
 	background-color: white;
+}
+
+.speaker-trapezoid {
+	border-bottom: 260px solid white;
+	border-left: 300px solid transparent;
+	border-right: 0px solid transparent;
+	height: 0;
+	width: 100px;
+	display: inline-block;
+	float: right;
+	margin: none;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 #schedule-scroll {
