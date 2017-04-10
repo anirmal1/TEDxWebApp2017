@@ -32,6 +32,12 @@ body {
 	padding-top: 25px;
 }
 
+.logo-pic {
+	height: 72px;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
 .section-header, a {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 90px;
