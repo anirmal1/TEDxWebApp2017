@@ -1,28 +1,31 @@
 {
 	"speakerNames" : {
-		"AngelaBullock" : {
-			"image" : "angela-bullock.jpg"
+		"Courtney Sheehan" : {
+			"image" : "courtney-sheehan.png"
 		},
-		"DerekSutherland" : {
-			"image" : "derek-sutherland.jpg"
+		"Erin Jones" : {
+			"image" : "erin-jones.jpg"
 		},
-		"ElizabethNance" : {
-			"image" : "elizabeth-nance.jpg"
+		"Jasmin Samy" : {
+			"image" : "jasmin-samy.jpg"
 		},
-		"JamesLong" : {
-			"image" : "james-long.jpg"
+		"Jeannie Berwick" : {
+			"image" : "jeannie-berwick.jpg"
 		},
-		"JohnEklof" : {
-			"image" : "john-eklof.jpg"
+		"Kelly Ogilvie" : {
+			"image" : "kelly-ogilvie.jpg"
 		}, 
-		"LaraZarowsky" : {
-			"image" : "lara-zarowsky.jpg"
+		"Peregrine Church" : {
+			"image" : "peregrine-church.jpg"
 		},
-		"LynetteJohnson" : {
-			"image" : "lynette-johnson.jpg"
+		"Rachel Marshall" : {
+			"image" : "rachel-marshall.jpg"
 		},
-		"PedroDomingos" : {
-			"image" : "pedro-domingos.jpg"
+		"Steven Matley" : {
+			"image" : "steven-matley.jpg"
+		},
+		"William Zhou" : {
+			"image" : "william-zhou.jpg"
 		}
 	}
 }

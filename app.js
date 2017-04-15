@@ -109,16 +109,17 @@ function processSpeakerData() {
 		speakerBox.classList.add('speakers-scroll-section');
 		var imageBlock = document.createElement('img');
 		var path = speakerNames[name].image;
-		imageBlock.setAttribute('src', 'assets/Images2016/' + path);
+		imageBlock.setAttribute('src', 'assets/Speakers2017/' + path);
 
 		// TODO figure out why width is NaN (think it might have to do with style of auto width in CSS)
-		totalWidth += parseInt(imageBlock.style.width);
+		console.log(parseInt(imageBlock.style.width));
+		totalWidth += 274;
 		console.log(imageBlock.style.width);
 		speakerBox.appendChild(imageBlock);
 		speakerScrollSection.appendChild(speakerBox);
 	}
 	console.log(totalWidth);
-	speakerScrollSection.style.width = '1625px';// HARDCODED BLEH //totalWidth + 'px';
+	speakerScrollSection.style.width = totalWidth + 'px'; // HARDCODED BLEH //totalWidth + 'px';
 }
 
 })();
