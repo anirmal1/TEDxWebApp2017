@@ -10,16 +10,9 @@ window.onload = function() {
 	var interactiveHeading = document.createElement('form');
 	interactiveHeading.classList.add('interactive-heading');
 	interactiveHeading.innerHTML = 'yes and ';
-	
-	// var clientId = '580857203762-8a7l6uad0242olp3lqcat5tiuuksdr26.apps.googleusercontent.com';
-	// if (!/^([0-9])$/.test(clientId[0])) {
- //    	alert('Invalid Client ID - did you forget to insert your application Client ID?');
- //    }
-
-	// var realtimeUtils = new utils.RealtimeUtils({ clientId: clientId });
-	// authorize(realtimeUtils);
+	//interactiveHeading.setAttribute("action", "word_cloud_data.php");
+	//interactiveHeading.setAttribute("method", "get");
 	interactiveHeading.onsubmit = function() {
-		// sendYesAndData(realtimeUtils);
 		sendYesAndData();
 	};
 
@@ -40,40 +33,22 @@ window.onload = function() {
 	// Activities information for home page
 };
 
-// function authorize(realtimeUtils) {
-//     // Attempt to authorize
-//     realtimeUtils.authorize(function(response){
-// 	    if(response.error){
-// 	        realtimeUtils.authorize(function(response){
-// 	          }, true);
-// 	    }
-//    	}, false);
-// }
-
 function sendYesAndData() {
-// function sendYesAndData(realtimeUtils) {
-// 	var id = realtimeUtils.getParam('id');
-//     if (id) {
-//       // Load the document id from the URL
-//       realtimeUtils.load(id.replace('/', ''), onDataLoad, onDataInitialize);
-//     } else {
-//       // Create a new document, add it to the URL
-//       realtimeUtils.createRealtimeFile('New Quickstart File', function(createResponse) {
-//         window.history.pushState(null, null, '?id=' + createResponse.id);
-//         realtimeUtils.load(createResponse.id, onDataLoad, onDataInitialize);
-//       });
-//     }
+	// try out php?
+	var inputValue = document.getElementById('yesAnd').value;
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function () {
+        if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            console.log(xhr.responseText);
+        }
+    };
+
+	xhr.open('GET', 'word_cloud_data.php?yesAnd=' + inputValue, true);
+	xhr.send();
+	
+	// TODO figure out why this will not work
 }
 
-// function onDataLoad(doc) {
-// 	var list = doc.getModel().getRoot().get('yesAndList');
-// 	console.log(list);
-// }
-
-// function onDataInitialize(model) {
-// 	var list = model.createList();
-// 	model.getRoot().set('yesAndList', list);
-// }
 
 function addHomePageScheduleInfo() {
 	var scheduleScrollSection = document.getElementById('schedule-blocks');
@@ -111,15 +86,11 @@ function processSpeakerData() {
 		var path = speakerNames[name].image;
 		imageBlock.setAttribute('src', 'assets/Speakers2017/' + path);
 
-		// TODO figure out why width is NaN (think it might have to do with style of auto width in CSS)
-		console.log(parseInt(imageBlock.style.width));
-		totalWidth += 274;
-		console.log(imageBlock.style.width);
+		totalWidth += 274; // HARDCODED VALUE bleh
 		speakerBox.appendChild(imageBlock);
 		speakerScrollSection.appendChild(speakerBox);
 	}
-	console.log(totalWidth);
-	speakerScrollSection.style.width = totalWidth + 'px'; // HARDCODED BLEH //totalWidth + 'px';
+	speakerScrollSection.style.width = totalWidth + 'px'; 
 }
 
 })();
