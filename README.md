@@ -2,7 +2,7 @@
 
 Web App for TEDxUofW 2017 attendees on the day of the event! To run:
 <ol>
-	<li>Clone the repository <code>git clone https://github.com/anirmal1/TEDxWebApp2017.git</code>.</li>
+	<li>Open up a terminal window. Navigate to the desired directory and clone the repository by <code>git clone https://github.com/anirmal1/TEDxWebApp2017.git</code>.</li>
 	<li>Start php server <code>php -S localhost:8000</code>.</li>
 	<li>Navigate to the web page on the chrome browser by navigating to <code>localhost:8000/index.html</code>.</li>
 	<li>Right-click anywhere on the page and click on "Inspect Element". On the right-hand panel that pops up, click on the second icon on the top-left ("Toggle device toolbar") to enter mobile view.</li>
