@@ -10,8 +10,6 @@ window.onload = function() {
 	var interactiveHeading = document.createElement('form');
 	interactiveHeading.classList.add('interactive-heading');
 	interactiveHeading.innerHTML = 'yes and ';
-	//interactiveHeading.setAttribute("action", "word_cloud_data.php");
-	//interactiveHeading.setAttribute("method", "get");
 	interactiveHeading.onsubmit = function() {
 		sendYesAndData();
 	};
@@ -34,7 +32,6 @@ window.onload = function() {
 };
 
 function sendYesAndData() {
-	// try out php?
 	var inputValue = document.getElementById('yesAnd').value;
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function () {
@@ -45,8 +42,6 @@ function sendYesAndData() {
 
 	xhr.open('GET', 'word_cloud_data.php?yesAnd=' + inputValue, true);
 	xhr.send();
-	
-	// TODO figure out why this will not work
 }
 
 
@@ -63,7 +58,7 @@ function addHomePageScheduleInfo() {
 		speakerText.innerHTML = eventItem;
 		speakerText.classList.add('event-box-text');
 		eventBox.appendChild(speakerText);
-		scheduleScrollSection.appendChild(eventBox); // can't figure out why entertainment 2 isnt showing :(
+		scheduleScrollSection.appendChild(eventBox); 
 	});
 }
 
