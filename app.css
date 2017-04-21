@@ -132,6 +132,15 @@ body {
 	margin-bottom: 10px;
 }
 
+#portrait {
+	padding: 15px;
+}
+
+.description {
+	font: Helvetica;
+	size: 70pt;
+}
+
 .speakers-scroll-section {
 	display: inline-block;
 	height: 270px;
@@ -180,4 +189,8 @@ body {
 
 #activities-scroll {
 
+}
+
+.speakerPhoto{
+	padding: 3px;
 }
