@@ -4,6 +4,19 @@
 
 window.onload = function() {
 	// Interactive section on the home page
+	addInteractiveHeading();
+
+	// Schedule information for home page
+	addHomePageScheduleInfo();
+
+	// Speaker information for home page
+	addSpeakerImages();
+	
+	// Activities information for home page
+	// TODO ask pr team (?) about what should go here
+};
+
+function addInteractiveHeading() {
 	var interactive = document.getElementById('interactive');
 	var interactiveHeading = document.createElement('form');
 
@@ -52,14 +65,7 @@ window.onload = function() {
 	inputPart.classList.add('homepage-input');
 	interactiveHeading.appendChild(inputPart);
 	interactive.appendChild(interactiveHeading);
-
-	addHomePageScheduleInfo();
-
-	// Speaker information for home page
-	addSpeakerImages();
-	
-	// Activities information for home page
-};
+}
 
 function sendYesAndData(chosenPrompt) { // function sendYesAndData() {
 	var inputValue = document.getElementById('yesAnd').value;
