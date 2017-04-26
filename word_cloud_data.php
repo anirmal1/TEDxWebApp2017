@@ -1,6 +1,7 @@
 <?php
-	if (isset($_GET["yesAnd"])) {
-		$word = $_GET["yesAnd"];
-		file_put_contents("data/word_cloud_data.txt", $word."\n", FILE_APPEND | LOCK_EX);
+	if (isset($_GET["input"]) && isset($_GET["prompt"])) {
+		$prompt = $_GET["prompt"]; 
+		$word = $_GET["input"];
+		file_put_contents("data/word_cloud_data_".$prompt.".txt", $word."\n", FILE_APPEND | LOCK_EX);
 	}
 ?>

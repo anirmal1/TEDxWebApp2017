@@ -5,13 +5,43 @@
 window.onload = function() {
 	// Interactive section on the home page
 	var interactive = document.getElementById('interactive');
-
-	// TEMPORARY:: just have "yes and ___", but change it at different times to display other things
 	var interactiveHeading = document.createElement('form');
+
+	// TODO replace these with the actual prompts (these are placeholders)
+	var promptText = {prompt1 : 'prompt 1 ', 
+										prompt2 : 'prompt 2 ',
+										prompt3 : 'prompt 3 ', 
+										prompt4 : 'prompt 4 ',
+										prompt5 : 'prompt 5 '};
+	var promptFiles = {prompt1 : 'prompt1', 
+										prompt2 : 'prompt2',
+										prompt3 : 'prompt3', 
+										prompt4 : 'prompt4',
+										prompt5 : 'prompt5'};
+
+	var currTime = new Date();
+	var hours = currTime.getHours();
+	var minutes = currTime.getMinutes();
+	var chosenPrompt = '';
+
+	// TODO replace these with the actual times (these are placeholders)
+	// (1:30 -> h: 13, m: 30), (2:30 -> h: 14, m: 30), ...
+	if ((hours == 13 && minutes >= 30) || (hours == 14 && minutes < 30)) {
+		chosenPrompt = "prompt1";
+	} else if ((hours == 14 && minutes >= 30) || (hours == 15 && minutes < 30)) {
+		chosenPrompt = "prompt2";
+	} else if ((hours == 15 && minutes >= 30) || (hours == 16 && minutes < 30)) {
+		chosenPrompt = "prompt3";
+	} else if ((hours == 16 && minutes >= 30) || (hours == 17 && minutes < 30)) {
+		chosenPrompt = "prompt4";
+	} else {
+		chosenPrompt = "prompt5";
+	}
+
 	interactiveHeading.classList.add('interactive-heading');
-	interactiveHeading.innerHTML = 'yes and ';
+	interactiveHeading.innerHTML = promptText[chosenPrompt]; //'yes and ';
 	interactiveHeading.onsubmit = function() {
-		sendYesAndData();
+		sendYesAndData(promptFiles[chosenPrompt]); //sendYesAndData();
 	};
 
 	var inputPart = document.createElement('input');
@@ -31,7 +61,7 @@ window.onload = function() {
 	// Activities information for home page
 };
 
-function sendYesAndData() {
+function sendYesAndData(chosenPrompt) { // function sendYesAndData() {
 	var inputValue = document.getElementById('yesAnd').value;
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function () {
@@ -40,7 +70,7 @@ function sendYesAndData() {
         }
     };
 
-	xhr.open('GET', 'word_cloud_data.php?yesAnd=' + inputValue, true);
+	xhr.open('GET', 'word_cloud_data.php?prompt=' + chosenPrompt + '&input=' + inputValue, true);
 	xhr.send();
 }
 
