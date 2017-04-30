@@ -62,6 +62,7 @@ function addInteractiveHeading() {
 	inputPart.setAttribute('name', 'yesAnd');
 	inputPart.setAttribute('id', 'yesAnd');
 	inputPart.setAttribute('size', '5');
+	inputPart.setAttribute('placeholder', 'your ideas');
 	inputPart.classList.add('homepage-input');
 	interactiveHeading.appendChild(inputPart);
 	interactive.appendChild(interactiveHeading);

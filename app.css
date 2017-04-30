@@ -116,7 +116,9 @@ body {
 }
 
 .homepage-input {
-	font-size: 120px;
+	font-size: 50px;
+	font-style: italic;
+	width: 300px;
 	border-top: none;
 	border-left: none;
 	border-right: none;
