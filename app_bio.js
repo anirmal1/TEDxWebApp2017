@@ -29,7 +29,10 @@ function processBioData(person, responseText) {
 	var image = document.createElement('img');
 	image.setAttribute('src', 'assets/Speakers2017/' + path);
 	image.classList.add('bio-image'); 
-	imageDiv.appendChild(image);
+	var blackDiv = document.createElement('div');
+	blackDiv.setAttribute('id', 'black-background');
+	blackDiv.appendChild(image);
+	imageDiv.appendChild(blackDiv);
 
 	var bioDiv = document.getElementById('bio-text');
 	var bio = personInfo.bio;

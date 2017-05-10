@@ -203,22 +203,33 @@ body {
 
 #bio-header {
 	display: inline-block;
-	font-size: 90px;
-	font-weight: 100;
+	font-size: 70px;
+	font-weight: 300;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	margin-left:20px;
+	margin-left:40px;
+	color: #E62B1E;
+	margin-bottom: 25px;
 }
 
 .bio-image {
-	width: 980px;
-	height: 980px;
+	width: 500px;
+	height: 500px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .para-class {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 18px;
 	font-weight: 200;
-	padding-left: 25px;
-	padding-right: 25px;
+	padding-left: 45px;
+	padding-right: 45px;
+	margin-bottom: 45px;
+}
+
+#black-background {
+	background-color: black;
+	margin-top: 20px;
 }
 
