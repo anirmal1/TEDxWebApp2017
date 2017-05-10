@@ -21,7 +21,7 @@ function processSpeakerData() {
 		image.setAttribute('src', 'assets/Speakers2017/' + path);
 		var link = document.createElement('a');
 		var linkPath = speakerNames[name].link;
-		link.setAttribute('href', 'bio?speaker='+linkPath);
+		link.setAttribute('href', 'bio.html?speaker='+linkPath);
 		link.setAttribute('id', name);
 		link.classList.add('speaker-page-image');
 		link.appendChild(image);
