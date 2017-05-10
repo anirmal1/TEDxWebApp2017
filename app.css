@@ -200,3 +200,25 @@ body {
 .speakerPhoto{
 	padding: 3px;
 }
+
+#bio-header {
+	display: inline-block;
+	font-size: 90px;
+	font-weight: 100;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin-left:20px;
+}
+
+.bio-image {
+	width: 980px;
+	height: 980px;
+}
+
+.para-class {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: 200;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
