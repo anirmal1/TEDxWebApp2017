@@ -24,7 +24,6 @@ body {
 }
 
 #speaker-images {
-	padding-left: 25px;
 	padding-top: 25px;
 }
 
@@ -179,6 +178,11 @@ body {
 
 .header-with-back-arrow {
 	padding-left: 25px;
+}
+
+.speaker-page-image {
+	width: 490px;
+	height: 490px;
 }
 
 #schedule-scroll {
