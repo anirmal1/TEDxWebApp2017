@@ -119,7 +119,10 @@ function processSpeakerData() {
 		imageBlock.setAttribute('src', 'assets/Speakers2017/' + path);
 
 		totalWidth += 274; // HARDCODED VALUE bleh
-		speakerBox.appendChild(imageBlock);
+		var link = document.createElement('a');
+		link.setAttribute('href', 'speakers.html');
+		link.appendChild(imageBlock);
+		speakerBox.appendChild(link);
 		speakerScrollSection.appendChild(speakerBox);
 	}
 	speakerScrollSection.style.width = totalWidth + 'px'; 
