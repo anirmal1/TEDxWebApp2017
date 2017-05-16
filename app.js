@@ -84,8 +84,8 @@ function sendYesAndData(chosenPrompt) { // function sendYesAndData() {
 
 function addHomePageScheduleInfo() {
 	var scheduleScrollSection = document.getElementById('schedule-blocks');
-	var events = ['Speaker1', 'Speaker2', 'Speaker3', 'Enter1', 'Speaker4', 'Speaker5', 'Speaker6', 'Enter2'];
-	boxWidth = 300;
+	var events = ['Introduction', 'Performance', 'Steven Matley', 'Peregrine Church', 'Erin Jones', 'Lunch', 'William Zhou', 'Rachel Marshall', 'Performance', 'Kelly Oglivie', 'Intermission', 'Jasmin Samy', 'Jeannie Berwick', 'Courtney Sheehan', 'Performance', 'Closing'];
+	boxWidth = 400;
 	scheduleScrollSection.style.width = ((boxWidth + 4) * events.length) + "px" // hard coded sorry bleh
 	events.forEach(function(eventItem) {
 		var eventBox = document.createElement('div');
