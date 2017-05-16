@@ -60,10 +60,22 @@ body {
 
 .speaker-title {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 90px;
+	font-size: 72px;
 	font-weight: 100;
 	color: white;
 	float: left;
+	padding-top: 34px;
+}
+
+.schedule-time {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	font-size: 60px;
+	padding-top: 38px;
+	float: right;
+	margin-right: 30px;
+	color: #E62B1E;
+	font-style: italic;
 }
 
 .homesection {
@@ -95,13 +107,21 @@ body {
 	display: inline-block;
 }
 
-.event-box-text {
+.event-box-text, .event-box-time {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 45px;
 	font-weight: 200;
 	float: left;
 	color: white;
-	margin: 15px;
+	padding-left: 15px;
+}
+
+.event-box-text {
+	margin-top: 25px;
+}
+
+.event-box-time {
+	margin-top: 50px;
 }
 
 .interactive-heading {
@@ -229,7 +249,7 @@ body {
 }
 
 #black-background {
-	background-color: black;
+	background-color: white;
 	margin-top: 20px;
 }
 

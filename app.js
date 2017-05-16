@@ -85,18 +85,37 @@ function sendYesAndData(chosenPrompt) { // function sendYesAndData() {
 function addHomePageScheduleInfo() {
 	var scheduleScrollSection = document.getElementById('schedule-blocks');
 	var events = ['Introduction', 'Performance', 'Steven Matley', 'Peregrine Church', 'Erin Jones', 'Lunch', 'William Zhou', 'Rachel Marshall', 'Performance', 'Kelly Oglivie', 'Intermission', 'Jasmin Samy', 'Jeannie Berwick', 'Courtney Sheehan', 'Performance', 'Closing'];
+	var times = ['11:00', '11:15', '11:20', '11:35', '11:50', '12:10', '1:15', '1:30', '1:45', '2:00', '2:25', '2:55', '3:10', '3:25', '3:40', '3:50']
+	
 	boxWidth = 400;
 	scheduleScrollSection.style.width = ((boxWidth + 4) * events.length) + "px" // hard coded sorry bleh
-	events.forEach(function(eventItem) {
+	for (var i = 0; i < events.length; i++) {
 		var eventBox = document.createElement('div');
 		eventBox.style.width = boxWidth + "px";
 		eventBox.classList.add('event-box');
+
+		var table = document.createElement('div');
+		table.style.display = 'table';
+		
 		var speakerText = document.createElement('p');
-		speakerText.innerHTML = eventItem;
+		speakerText.innerHTML = events[i];
 		speakerText.classList.add('event-box-text');
-		eventBox.appendChild(speakerText);
+		var timeText = document.createElement('p');
+		timeText.innerHTML = times[i];
+		timeText.classList.add('event-box-time');
+	
+		var speakerContainer = document.createElement('div');
+		speakerContainer.style.display = 'table-row';
+		speakerContainer.appendChild(speakerText);
+		eventBox.appendChild(speakerContainer);
+
+		var timeContainer = document.createElement('div');
+		timeContainer.style.display = 'table-row';
+		timeContainer.append(timeText);
+		eventBox.appendChild(timeContainer);
+
 		scheduleScrollSection.appendChild(eventBox); 
-	});
+	};
 }
 
 function addSpeakerImages() {
