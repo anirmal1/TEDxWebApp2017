@@ -223,12 +223,12 @@ body {
 
 #bio-header {
 	display: inline-block;
-	font-size: 70px;
+	font-size: 75px;
 	font-weight: 300;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin-left:40px;
 	color: #E62B1E;
-	margin-bottom: 25px;
+	margin-bottom: 10px;
 }
 
 .bio-image {
@@ -241,7 +241,7 @@ body {
 
 .para-class {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 18px;
+	font-size: 50px;
 	font-weight: 200;
 	padding-left: 45px;
 	padding-right: 45px;
