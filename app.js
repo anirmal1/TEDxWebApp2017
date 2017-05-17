@@ -21,16 +21,24 @@ function addInteractiveHeading() {
 	var interactiveHeading = document.createElement('form');
 
 	// TODO replace these with the actual prompts (these are placeholders)
-	var promptText = {prompt1 : 'prompt 1 ', 
-										prompt2 : 'prompt 2 ',
-										prompt3 : 'prompt 3 ', 
-										prompt4 : 'prompt 4 ',
-										prompt5 : 'prompt 5 '};
-	var promptFiles = {prompt1 : 'prompt1', 
-										prompt2 : 'prompt2',
-										prompt3 : 'prompt3', 
-										prompt4 : 'prompt4',
-										prompt5 : 'prompt5'};
+	var promptText = {steve : 'I am proud to be ', 
+										peregrine : 'Novelty is ',
+										erin : 'I can ', 
+										will : 'I can use 5 seconds to ',
+										rachel : 'I can make people feel ',
+										kelly : 'Changing our perspective is ',
+										jasmin : '<insert prompt> ',
+										jeannie : '<insert prompt> ',
+										courtney : 'I can bring creative purpose to '};
+	var promptFiles = {steve : 'steve', 
+										peregrine : 'peregrine',
+										erin : 'erin', 
+										will : 'will',
+										rachel : 'rachel',
+										kelly : 'kelly',
+										jasmin : 'jasmin',
+										jeannie : 'jeannie',
+										courtney : 'courtney'};
 
 	var currTime = new Date();
 	var hours = currTime.getHours();
@@ -39,33 +47,45 @@ function addInteractiveHeading() {
 
 	// TODO replace these with the actual times (these are placeholders)
 	// (1:30 -> h: 13, m: 30), (2:30 -> h: 14, m: 30), ...
-	if ((hours == 13 && minutes >= 30) || (hours == 14 && minutes < 30)) {
-		chosenPrompt = "prompt1";
-	} else if ((hours == 14 && minutes >= 30) || (hours == 15 && minutes < 30)) {
-		chosenPrompt = "prompt2";
-	} else if ((hours == 15 && minutes >= 30) || (hours == 16 && minutes < 30)) {
-		chosenPrompt = "prompt3";
-	} else if ((hours == 16 && minutes >= 30) || (hours == 17 && minutes < 30)) {
-		chosenPrompt = "prompt4";
+	if ((hours == 11 && minutes >= 30) || (hours == 11 && minutes <= 40)) { // 11:30-11:40
+		chosenPrompt = "steve";
+	} else if ((hours == 11 && minutes >= 45) || (hours == 11 && minutes <= 55)) { // 11:45-11:55
+		chosenPrompt = "peregrine";
+	} else if ((hours == 12 && minutes >= 0) || (hours == 12 && minutes <= 10)) { // 12:00-12:10
+		chosenPrompt = "erin";
+	} else if ((hours == 13 && minutes >= 25) || (hours == 13 && minutes <= 35)) { // 1:25-1:35
+		chosenPrompt = "will";
+	} else if ((hours == 13 && minutes >= 40) || (hours == 13 && minutes <= 50)) { // 1:40-1:50
+		chosenPrompt = "rachel";
+	} else if ((hours == 14 && minutes >= 10) || (hours == 14 && minutes <= 20)) { // 2:10-2:20
+		chosenPrompt = "kelly";
+	} else if ((hours == 15 && minutes >= 5) || (hours == 15 && minutes <= 15)) { // 3:05-3:15
+		chosenPrompt = "jasmin";
+	} else if ((hours == 15 && minutes >= 20) || (hours == 15 && minutes <= 30)) { // 3:20-3:30
+		chosenPrompt = "jeannie";
+	} else if ((hours == 15 && minutes >= 35) || (hours == 15 && minutes <= 45)) { // 3:35-3:45
+		chosenPrompt = "courtney";
 	} else {
-		chosenPrompt = "prompt5";
+		chosenPrompt = null;
 	}
 
-	interactiveHeading.classList.add('interactive-heading');
-	interactiveHeading.innerHTML = promptText[chosenPrompt]; //'yes and ';
-	interactiveHeading.onsubmit = function() {
-		sendYesAndData(promptFiles[chosenPrompt]); //sendYesAndData();
-	};
+	if (chosenPrompt != null) {
+		interactiveHeading.classList.add('interactive-heading');
+		interactiveHeading.innerHTML = promptText[chosenPrompt]; //'yes and ';
+		interactiveHeading.onsubmit = function() {
+			sendYesAndData(promptFiles[chosenPrompt]); //sendYesAndData();
+		};
 
-	var inputPart = document.createElement('input');
-	inputPart.setAttribute('type', 'text');
-	inputPart.setAttribute('name', 'yesAnd');
-	inputPart.setAttribute('id', 'yesAnd');
-	inputPart.setAttribute('size', '5');
-	inputPart.setAttribute('placeholder', 'your ideas');
-	inputPart.classList.add('homepage-input');
-	interactiveHeading.appendChild(inputPart);
-	interactive.appendChild(interactiveHeading);
+		var inputPart = document.createElement('input');
+		inputPart.setAttribute('type', 'text');
+		inputPart.setAttribute('name', 'yesAnd');
+		inputPart.setAttribute('id', 'yesAnd');
+		inputPart.setAttribute('size', '5');
+		inputPart.setAttribute('placeholder', 'your ideas');
+		inputPart.classList.add('homepage-input');
+		interactiveHeading.appendChild(inputPart);
+		interactive.appendChild(interactiveHeading);
+	}
 }
 
 function sendYesAndData(chosenPrompt) { // function sendYesAndData() {
