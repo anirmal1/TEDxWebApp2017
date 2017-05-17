@@ -1,7 +1,8 @@
 <?php
-	if (isset($_GET["input"]) && isset($_GET["prompt"])) {
+	if (isset($_GET["word"]) && isset($_GET["prompt"])) {
 		$prompt = $_GET["prompt"]; 
-		$word = $_GET["input"];
+		$word = $_GET["word"];
 		file_put_contents("data/word_cloud_data_".$prompt.".txt", $word."\n", FILE_APPEND | LOCK_EX);
+		echo $word;
 	}
 ?>

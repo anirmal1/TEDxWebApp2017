@@ -66,7 +66,7 @@ function addInteractiveHeading() {
 	} else if (hours == 15 && minutes >= 35 && minutes <= 45) { // 3:35-3:45
 		chosenPrompt = "courtney";
 	} else {
-		chosenPrompt = null;
+		chosenPrompt = null;//"will";
 	}
 
 	if (chosenPrompt != null) {
@@ -74,6 +74,7 @@ function addInteractiveHeading() {
 		interactiveHeading.innerHTML = promptText[chosenPrompt]; //'yes and ';
 		interactiveHeading.onsubmit = function() {
 			sendYesAndData(promptFiles[chosenPrompt]); //sendYesAndData();
+			return false;
 		};
 
 		var inputPart = document.createElement('input');
@@ -93,11 +94,11 @@ function sendYesAndData(chosenPrompt) { // function sendYesAndData() {
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function () {
         if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-            console.log(xhr.responseText);
+						console.log(xhr.responseText);
         }
     };
 
-	xhr.open('GET', 'word_cloud_data.php?prompt=' + chosenPrompt + '&input=' + inputValue, true);
+	xhr.open('GET', 'word_cloud_data.php?prompt=' + chosenPrompt + '&word=' + inputValue, true);
 	xhr.send();
 }
 
