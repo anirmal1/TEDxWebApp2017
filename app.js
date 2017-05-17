@@ -47,23 +47,23 @@ function addInteractiveHeading() {
 
 	// TODO replace these with the actual times (these are placeholders)
 	// (1:30 -> h: 13, m: 30), (2:30 -> h: 14, m: 30), ...
-	if ((hours == 11 && minutes >= 30) || (hours == 11 && minutes <= 40)) { // 11:30-11:40
+	if (hours == 11 && minutes >= 30 && minutes <= 40) { // 11:30-11:40
 		chosenPrompt = "steve";
-	} else if ((hours == 11 && minutes >= 45) || (hours == 11 && minutes <= 55)) { // 11:45-11:55
+	} else if (hours == 11 && minutes >= 45 && minutes <= 55) { // 11:45-11:55
 		chosenPrompt = "peregrine";
-	} else if ((hours == 12 && minutes >= 0) || (hours == 12 && minutes <= 10)) { // 12:00-12:10
+	} else if (hours == 12 && minutes >= 0 && minutes <= 10) { // 12:00-12:10
 		chosenPrompt = "erin";
-	} else if ((hours == 13 && minutes >= 25) || (hours == 13 && minutes <= 35)) { // 1:25-1:35
+	} else if (hours == 13 && minutes >= 25 && minutes <= 35) { // 1:25-1:35
 		chosenPrompt = "will";
-	} else if ((hours == 13 && minutes >= 40) || (hours == 13 && minutes <= 50)) { // 1:40-1:50
+	} else if (hours == 13 && minutes >= 40 && minutes <= 50) { // 1:40-1:50
 		chosenPrompt = "rachel";
-	} else if ((hours == 14 && minutes >= 10) || (hours == 14 && minutes <= 20)) { // 2:10-2:20
+	} else if (hours == 14 && minutes >= 10 && minutes <= 20) { // 2:10-2:20
 		chosenPrompt = "kelly";
-	} else if ((hours == 15 && minutes >= 5) || (hours == 15 && minutes <= 15)) { // 3:05-3:15
+	} else if (hours == 15 && minutes >= 5 && minutes <= 15) { // 3:05-3:15
 		chosenPrompt = "jasmin";
-	} else if ((hours == 15 && minutes >= 20) || (hours == 15 && minutes <= 30)) { // 3:20-3:30
+	} else if (hours == 15 && minutes >= 20 && minutes <= 30) { // 3:20-3:30
 		chosenPrompt = "jeannie";
-	} else if ((hours == 15 && minutes >= 35) || (hours == 15 && minutes <= 45)) { // 3:35-3:45
+	} else if (hours == 15 && minutes >= 35 && minutes <= 45) { // 3:35-3:45
 		chosenPrompt = "courtney";
 	} else {
 		chosenPrompt = null;
