@@ -45,7 +45,6 @@ function addInteractiveHeading() {
 	var minutes = currTime.getMinutes();
 	var chosenPrompt = '';
 
-	// TODO replace these with the actual times (these are placeholders)
 	// (1:30 -> h: 13, m: 30), (2:30 -> h: 14, m: 30), ...
 	if (hours == 11 && minutes >= 30 && minutes <= 40) { // 11:30-11:40
 		chosenPrompt = "steve";
@@ -66,14 +65,24 @@ function addInteractiveHeading() {
 	} else if (hours == 15 && minutes >= 35 && minutes <= 45) { // 3:35-3:45
 		chosenPrompt = "courtney";
 	} else {
-		chosenPrompt = null;//"will";
+		chosenPrompt = "will";
 	}
 
 	if (chosenPrompt != null) {
 		interactiveHeading.classList.add('interactive-heading');
-		interactiveHeading.innerHTML = promptText[chosenPrompt]; //'yes and ';
+		interactiveHeading.innerHTML = promptText[chosenPrompt];
 		interactiveHeading.onsubmit = function() {
-			sendYesAndData(promptFiles[chosenPrompt]); //sendYesAndData();
+			sendYesAndData(promptFiles[chosenPrompt]);
+			// add confirmation
+			interactiveHeading.removeChild(inputPart);
+			interactiveHeading.innerHTML = '';
+			var loader = document.createElement('div');
+			loader.classList.add('loader');
+			interactiveHeading.appendChild(loader);
+			setTimeout( function() {
+				loader.parentNode.removeChild(loader);
+				interactiveHeading.innerHTML = '&#10003; thank you'; // TODO what type of confirmation?
+			}, 2000);
 			return false;
 		};
 
@@ -87,6 +96,19 @@ function addInteractiveHeading() {
 		interactiveHeading.appendChild(inputPart);
 		interactive.appendChild(interactiveHeading);
 	}
+}
+
+function populateLocalStorage() {
+	s = window.localStorage;
+	s.setItem('steve', true);
+	s.setItem('peregrine', true);
+	s.setItem('erin', true);
+	s.setItem('will', true);
+	s.setItem('rachel', true);
+	s.setItem('kelly', true);
+	s.setItem('jasmin', true);
+	s.setItem('jeannie', true);
+	s.setItem('courtney', true);
 }
 
 function sendYesAndData(chosenPrompt) { // function sendYesAndData() {
