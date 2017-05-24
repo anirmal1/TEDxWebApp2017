@@ -25,16 +25,16 @@ function addInteractiveHeading() {
 										peregrine : 'Novelty is ',
 										erin : 'I can ', 
 										will : 'I can use 5 seconds to ',
-										rachel : 'I can make people feel ',
+										// rachel : 'I can make people feel ',
 										kelly : 'Changing our perspective is ',
-										jasmin : '<insert prompt> ',
-										jeannie : '<insert prompt> ',
+										jasmin : 'Words shape how we ',
+										jeannie : 'Being a good leader means ',
 										courtney : 'I can bring creative purpose to '};
 	var promptFiles = {steve : 'steve', 
 										peregrine : 'peregrine',
 										erin : 'erin', 
 										will : 'will',
-										rachel : 'rachel',
+										// rachel : 'rachel',
 										kelly : 'kelly',
 										jasmin : 'jasmin',
 										jeannie : 'jeannie',
@@ -45,6 +45,11 @@ function addInteractiveHeading() {
 	var minutes = currTime.getMinutes();
 	var chosenPrompt = '';
 
+	if(window.localStorage.getItem('steve') == null) {
+		populateLocalStorage();
+		console.log('populated');
+	}
+
 	// (1:30 -> h: 13, m: 30), (2:30 -> h: 14, m: 30), ...
 	if (hours == 11 && minutes >= 30 && minutes <= 40) { // 11:30-11:40
 		chosenPrompt = "steve";
@@ -54,9 +59,9 @@ function addInteractiveHeading() {
 		chosenPrompt = "erin";
 	} else if (hours == 13 && minutes >= 25 && minutes <= 35) { // 1:25-1:35
 		chosenPrompt = "will";
-	} else if (hours == 13 && minutes >= 40 && minutes <= 50) { // 1:40-1:50
+	} /* else if (hours == 13 && minutes >= 40 && minutes <= 50) { // 1:40-1:50
 		chosenPrompt = "rachel";
-	} else if (hours == 14 && minutes >= 10 && minutes <= 20) { // 2:10-2:20
+	} */ else if (hours == 14 && minutes >= 10 && minutes <= 20) { // 2:10-2:20
 		chosenPrompt = "kelly";
 	} else if (hours == 15 && minutes >= 5 && minutes <= 15) { // 3:05-3:15
 		chosenPrompt = "jasmin";
@@ -65,7 +70,13 @@ function addInteractiveHeading() {
 	} else if (hours == 15 && minutes >= 35 && minutes <= 45) { // 3:35-3:45
 		chosenPrompt = "courtney";
 	} else {
-		chosenPrompt = "will";
+		chosenPrompt = "erin";
+	}
+
+	if (chosenPrompt != null) {
+		if (!window.localStorage.getItem(chosenPrompt)) {
+			chosenPrompt = null;
+		}
 	}
 
 	if (chosenPrompt != null) {
@@ -74,15 +85,29 @@ function addInteractiveHeading() {
 		interactiveHeading.onsubmit = function() {
 			sendYesAndData(promptFiles[chosenPrompt]);
 			// add confirmation
-			interactiveHeading.removeChild(inputPart);
-			interactiveHeading.innerHTML = '';
+			var word = inputPart.value;
+			//interactiveHeading.removeChild(inputPart);
+			//interactiveHeading.innerHTML = '';
 			var loader = document.createElement('div');
+			loader.style.display = 'inline-block';
 			loader.classList.add('loader');
 			interactiveHeading.appendChild(loader);
 			setTimeout( function() {
 				loader.parentNode.removeChild(loader);
-				interactiveHeading.innerHTML = '&#10003; thank you'; // TODO what type of confirmation?
-			}, 2000);
+				interactiveHeading.innerHTML = '';
+				//inputPart.parentNode.removeChild(inputPart);
+				var promptPart = document.createElement('span');
+				promptPart.innerHTML = promptText[chosenPrompt];
+				var inp = document.createElement('span');
+				inp.innerHTML = word;
+				interactiveHeading.appendChild(promptPart);
+				interactiveHeading.appendChild(inp);
+				//interactiveHeading.innerHTML = promptText[chosenPrompt] + word;
+				inp.style.fontStyle = 'italic';
+				inp.style.color = '#E62B1E';
+
+				// interactiveHeading.innerHTML = '&#10003; submitted'; // TODO what type of confirmation?
+			},500);
 			return false;
 		};
 
@@ -92,9 +117,12 @@ function addInteractiveHeading() {
 		inputPart.setAttribute('id', 'yesAnd');
 		inputPart.setAttribute('size', '5');
 		inputPart.setAttribute('placeholder', 'your ideas');
+		inputPart.setAttribute('autocapitalize', 'off');
 		inputPart.classList.add('homepage-input');
 		interactiveHeading.appendChild(inputPart);
 		interactive.appendChild(interactiveHeading);
+
+		window.localStorage.setItem(chosenPrompt, false);
 	}
 }
 
@@ -104,7 +132,7 @@ function populateLocalStorage() {
 	s.setItem('peregrine', true);
 	s.setItem('erin', true);
 	s.setItem('will', true);
-	s.setItem('rachel', true);
+	// s.setItem('rachel', true);
 	s.setItem('kelly', true);
 	s.setItem('jasmin', true);
 	s.setItem('jeannie', true);
@@ -127,8 +155,8 @@ function sendYesAndData(chosenPrompt) { // function sendYesAndData() {
 
 function addHomePageScheduleInfo() {
 	var scheduleScrollSection = document.getElementById('schedule-blocks');
-	var events = ['Introduction', 'Performance', 'Steven Matley', 'Peregrine Church', 'Erin Jones', 'Lunch', 'William Zhou', 'Rachel Marshall', 'Performance', 'Kelly Oglivie', 'Intermission', 'Jasmin Samy', 'Jeannie Berwick', 'Courtney Sheehan', 'Performance', 'Closing'];
-	var times = ['11:00', '11:15', '11:20', '11:35', '11:50', '12:10', '1:15', '1:30', '1:45', '2:00', '2:25', '2:55', '3:10', '3:25', '3:40', '3:50']
+	var events = ['Introduction', 'Performance', 'Steven Matley', 'Peregrine Church', 'Erin Jones', 'Lunch', 'William Zhou', 'Performance', 'Kelly Oglivie', 'Intermission', 'Jasmin Samy', 'Jeannie Berwick', 'Courtney Sheehan', 'Performance', 'Closing'];
+	var times = ['11:00', '11:15', '11:20', '11:35', '11:50', '12:10', '1:15', '1:45', '2:00', '2:25', '2:55', '3:10', '3:25', '3:40', '3:50']
 	
 	boxWidth = 400;
 	scheduleScrollSection.style.width = ((boxWidth + 4) * events.length) + "px" // hard coded sorry bleh

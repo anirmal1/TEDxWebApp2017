@@ -19,12 +19,15 @@ function processSpeakerData() {
 		image.classList.add('speaker-page-image');
 		var path = speakerNames[name].image;
 		image.setAttribute('src', 'assets/Speakers2017/' + path);
+		var nameCaption = document.createElement('div');
+		nameCaption.classList.add('name-caption');
 		var link = document.createElement('a');
 		var linkPath = speakerNames[name].link;
 		link.setAttribute('href', 'bio.html?speaker='+linkPath);
 		link.setAttribute('id', name);
 		link.classList.add('speaker-page-image');
 		link.appendChild(image);
+		link.appendChild(nameCaption);
 		speakerDiv.appendChild(link);
 	}
 }
