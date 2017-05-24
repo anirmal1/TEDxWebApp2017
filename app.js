@@ -84,10 +84,7 @@ function addInteractiveHeading() {
 		interactiveHeading.innerHTML = promptText[chosenPrompt];
 		interactiveHeading.onsubmit = function() {
 			sendYesAndData(promptFiles[chosenPrompt]);
-			// add confirmation
 			var word = inputPart.value;
-			//interactiveHeading.removeChild(inputPart);
-			//interactiveHeading.innerHTML = '';
 			var loader = document.createElement('div');
 			loader.style.display = 'inline-block';
 			loader.classList.add('loader');
@@ -95,18 +92,15 @@ function addInteractiveHeading() {
 			setTimeout( function() {
 				loader.parentNode.removeChild(loader);
 				interactiveHeading.innerHTML = '';
-				//inputPart.parentNode.removeChild(inputPart);
 				var promptPart = document.createElement('span');
 				promptPart.innerHTML = promptText[chosenPrompt];
 				var inp = document.createElement('span');
 				inp.innerHTML = word;
 				interactiveHeading.appendChild(promptPart);
 				interactiveHeading.appendChild(inp);
-				//interactiveHeading.innerHTML = promptText[chosenPrompt] + word;
 				inp.style.fontStyle = 'italic';
 				inp.style.color = '#E62B1E';
 
-				// interactiveHeading.innerHTML = '&#10003; submitted'; // TODO what type of confirmation?
 			},500);
 			return false;
 		};
