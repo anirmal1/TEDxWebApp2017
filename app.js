@@ -20,7 +20,6 @@ function addInteractiveHeading() {
 	var interactive = document.getElementById('interactive');
 	var interactiveHeading = document.createElement('form');
 
-	// TODO replace these with the actual prompts (these are placeholders)
 	var promptText = {steve : 'I am proud to be ', 
 										peregrine : 'Novelty is ',
 										erin : 'I can ', 
@@ -133,7 +132,7 @@ function populateLocalStorage() {
 	s.setItem('courtney', true);
 }
 
-function sendYesAndData(chosenPrompt) { // function sendYesAndData() {
+function sendYesAndData(chosenPrompt) { 
 	var inputValue = document.getElementById('yesAnd').value;
 	var xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function () {

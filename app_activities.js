@@ -43,13 +43,19 @@ function displayActivities() {
 }
 
 function submitCode(id, code) {
-	console.log(id);
-	console.log(document.getElementById(id).value);
-	console.log(code);
 	if (code == document.getElementById(id).value) {
-		console.log('correct!');
+		var el = document.getElementById(id);
+		var par = el.parentNode;
+		var parpar = par.parentNode;
+		parpar.removeChild(par);
+		var check = document.createElement('h1');
+		check.innerHTML = '&#10003;';
+		check.classList.add('check');
+		parpar.appendChild(check);
 	} else {
-		console.log('incorrect :(');
+		var el = document.getElementById(id);
+		el.value = '';
+		el.setAttribute('placeholder', 'try again');
 	}
 }
 
