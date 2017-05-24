@@ -24,7 +24,7 @@ body {
 }
 
 #speaker-images {
-	padding-top: 25px;
+	padding-top: 5px;
 }
 
 .logo-pic {
@@ -204,6 +204,8 @@ font-size: 45px;
 .speaker-page-image {
 	width: 490px;
 	height: 490px;
+	display: inline-block;
+	margin-top: 15px;
 }
 
 #schedule-scroll {
@@ -282,7 +284,11 @@ font-size: 45px;
 .name-caption {
 	width: 490px;
 	height: 70px;
-	font-size: 20px;
+	font-size: 55px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-top: -20px;
+	text-align: center;
 	color: white;
 	background-color: #3a3a3a;
 	z-index = -1;
