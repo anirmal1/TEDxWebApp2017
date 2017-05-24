@@ -14,6 +14,7 @@ function processSpeakerData() {
 	var data = JSON.parse(this.responseText);
 	var speakerDiv = document.getElementById('speaker-images');
 	var speakerNames = data.speakerNames;
+	var i = 0
 	for (var name in speakerNames) {
 		var image = document.createElement('img');
 		image.classList.add('speaker-page-image');
@@ -22,6 +23,11 @@ function processSpeakerData() {
 		var nameCaption = document.createElement('div');
 		nameCaption.classList.add('name-caption');
 		nameCaption.innerHTML = name;
+		if (i % 2 != 0) {
+			nameCaption.style.borderLeft = '2px solid white';
+		} else {
+			nameCaption.style.borderRight = '2px solid white';
+		}
 		var link = document.createElement('a');
 		var linkPath = speakerNames[name].link;
 		link.setAttribute('href', 'bio.html?speaker='+linkPath);
@@ -32,6 +38,7 @@ function processSpeakerData() {
 		temp.appendChild(nameCaption);
 		link.appendChild(temp);
 		speakerDiv.appendChild(link);
+		i++;
 	}
 }
 
