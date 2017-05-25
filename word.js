@@ -6,9 +6,8 @@ window.onload = function() {
 function showData() {
 	var value = document.getElementById('select').value;
 	var text = document.getElementById('words');
-	if (value == 'none') {
-		words.innerHTML = '';
-	} else {
+	text.innerHTML = '';
+	if (value != 'none') {
 		var xhr = new XMLHttpRequest();
 		xhr.onload = addWords;
 		xhr.open('GET', 'data/word_cloud_data_' + value + '.txt', true);
@@ -17,8 +16,12 @@ function showData() {
 }
 
 function addWords() {
-	var data = this.responseText;
+	var data = this.responseText.split('\n')
 	var text = document.getElementById('words');
-	text.innerHTML = data;
+	for (var i = 0; i < data.length; i++) {
+		var p = document.createElement('p');
+		p.innerHTML = data[i];
+		text.appendChild(p);
+	}
 }
 

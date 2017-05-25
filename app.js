@@ -3,6 +3,7 @@
 (function() {
 
 window.onload = function() {
+	//window.localStorage.clear();
 	// Interactive section on the home page
 	addInteractiveHeading();
 
@@ -46,7 +47,6 @@ function addInteractiveHeading() {
 
 	if(window.localStorage.getItem('steve') == null) {
 		populateLocalStorage();
-		console.log('populated');
 	}
 
 	// (1:30 -> h: 13, m: 30), (2:30 -> h: 14, m: 30), ...
@@ -73,8 +73,19 @@ function addInteractiveHeading() {
 	}
 
 	if (chosenPrompt != null) {
-		if (!window.localStorage.getItem(chosenPrompt)) {
-			chosenPrompt = null;
+		if (window.localStorage.getItem(chosenPrompt) != 'true') {
+			interactiveHeading.classList.add('interactive-heading');
+			var word = window.localStorage.getItem(chosenPrompt);
+			var promptPart = document.createElement('span');
+			promptPart.innerHTML = promptText[chosenPrompt];
+			var inp = document.createElement('span');
+			inp.innerHTML = word;
+			interactiveHeading.appendChild(promptPart);
+			interactiveHeading.appendChild(inp);
+			inp.style.fontStyle = 'italic';
+			inp.style.color = '#E62B1E';
+			interactive.appendChild(interactiveHeading);
+			chosenPrompt = null;	
 		}
 	}
 
@@ -99,7 +110,7 @@ function addInteractiveHeading() {
 				interactiveHeading.appendChild(inp);
 				inp.style.fontStyle = 'italic';
 				inp.style.color = '#E62B1E';
-
+				window.localStorage.setItem(chosenPrompt, word);
 			},500);
 			return false;
 		};
@@ -114,8 +125,6 @@ function addInteractiveHeading() {
 		inputPart.classList.add('homepage-input');
 		interactiveHeading.appendChild(inputPart);
 		interactive.appendChild(interactiveHeading);
-
-		window.localStorage.setItem(chosenPrompt, false);
 	}
 }
 
