@@ -1,0 +1,34 @@
+#heading {
+	font-size: 60px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 200;
+	text-align: center;
+}
+
+#form-div {
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+#form {
+	display: inline-block;
+}
+
+#select {
+	font-size: 25px;
+}
+
+#wordHeading {
+	font-size: 40px;
+	font-weight: 200;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#words {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
