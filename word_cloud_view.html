@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+	<title>TEDxUofW</title>
+	<meta charset='UTF-8'>
+	<script src="d3.min.js" charset="utf-8"></script>
+	<script src='d3.layout.cloud.js'></script>
+	<script src = 'word_cloud.js'></script>
+	<link href='app.css' type='text/css' rel='stylesheet'/>
+</head>
+<body>
+	<div id='overall-page'>
+			<div id="top-banner">
+				<img src="assets/TEDx_logo_White.png" id="logo"/>
+				<div id="logo-items">
+					<a href="https://www.facebook.com/TEDxUofW/" target="_blank"><img src="assets/Logos/FB-f-Logo__white_72.png" class="logo-pic"/></a>
+					<a href="https://www.instagram.com/tedxuofw/" target="_blank"><img src="assets/Logos/insta.png" class="logo-pic"/></a>
+				</div>	
+			</div>
+			<div class="header-with-back-arrow">
+				<a href="index.html"><img src="assets/Icons/back_arrow.svg" class="back"/></a>
+				<a href="index.html"><h1 class="section-header">Word Cloud</h1></a>
+			</div>
+			<div id='form-div'>
+				<form id='form'>
+					<select id='select'>
+						<option value='none'>Select a prompt</option>
+						<option value='steve'>I am proud to be</option>
+						<option value='peregrine'>Novelty is</option>
+						<option value='erin'>I can</option>
+						<option value='will'>I can use 5 seconds to</option>
+						<option value='kelly'>Changing our perspective is</option>
+						<option value='jasmin'>Words shape how we</option>
+						<option value='jeannie'>Being a good leader means</option>
+						<option value='courtney'>I can bring creative purpose to</option>
+					</select>
+				</form>	
+			</div>
+			<div style="display: table; width: 100%;">
+				<div id="word_cloud" style="display: table-cell; vertical-align: middle; width: 100%">
+				</div>
+			</div>
+
+	</div>
+</body>
