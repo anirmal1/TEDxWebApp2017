@@ -26,7 +26,8 @@ function createWordCloud() {
 	var speakerWords = this.responseText.split('\n');
 	//var speakerWords = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum'.split(' ');
 	var width = document.getElementById('word_cloud').clientWidth;
-	fill =  ["#DFDFDF", "#C3C3C3", "#A7A7A7", "#8B8B8B", "#6F6F6F", "#535353", "#373737", "#1B1B1B", "#000000"];
+	fill = ["#000000", "#1C0503", "#390A07", "#56100B", "#73150F", "#8F1A12", "#AC2016", "#C9251A", "#E62B1E"];
+	// fill =  ["#DFDFDF", "#C3C3C3", "#A7A7A7", "#8B8B8B", "#6F6F6F", "#535353", "#373737", "#1B1B1B", "#000000"];
 	layout = d3.layout.cloud()
     .size([width, width])
     .words(speakerWords.map(function(d) {
@@ -54,7 +55,7 @@ function draw(words) {
       .data(words)
     .enter().append("text")
       .style("font-size", function(d) { return d.size + "px"; })
-      .style("font-family", "Impact")
+      .style("font-family", "Helvetica")
       .style("fill", function(d, i) { 
 					return fill[i % fill.length]; 
 			})
